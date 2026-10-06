@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-light-ash: #E8EBED;
+  --color-dark-ash: #141517;
+  --color-leaf-green: #16a34a;
+  --color-saffron: #fe6e00;
+  --font-sans: 'Smooch Sans', sans-serif;
+  --font-mono: 'Smooch Sans', monospace;
+
+  --color-red-300: #ffa3a3;
+  --color-red-400: #ff6568;
+  --color-red-500: #fb2c36;
+  --color-red-600: #e40014;
+  --color-red-700: #bf000f;
+  --color-orange-400: #ff8b1a;
+  --color-orange-500: #fe6e00;
+  --color-amber-300: #ffd236;
+  --color-green-300: #7bf1a8;
+  --color-green-400: #05df72;
+  --color-green-500: #00c758;
+  --color-green-600: #00a544;
+  --color-blue-600: #155dfc;
+  --color-blue-700: #1447e6;
+  --color-purple-500: #ac4bff;
+  --color-purple-600: #9810fa;
+  --color-pink-500: #f6339a;
+  --color-slate-950: #020618;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5dc;
+  --color-gray-400: #99a1af;
+  --color-gray-500: #6a7282;
+  --color-gray-600: #4a5565;
+  --color-gray-700: #364153;
+  --color-gray-800: #1e2939;
+  --color-gray-900: #101828;
+  --color-neutral-900: #171717;
+  --color-black: #000;
+  --color-white: #fff;
+
+  --color-emerald-50: #f0fdf4;
+  --color-emerald-100: #d1fae5;
+  --color-emerald-200: #a7f3d0;
+  --color-emerald-300: #6ee7b7;
+  --color-emerald-400: #34d399;
+  --color-emerald-500: #10b981;
+  --color-emerald-600: #059669;
+  --color-emerald-700: #047857;
+  --color-emerald-800: #065f46;
+  --color-emerald-900: #064e3b;
+}
+
+html {
+  font-size: 18px;
+}
+
+html, body {
+  font-family: 'Smooch Sans', sans-serif;
+  letter-spacing: 0.03em;
+}
+
+/* Allow bold and specific font weights to properly render */
+.font-bold, strong, b {
+  font-weight: 700 !important;
+}
+.font-extrabold {
+  font-weight: 800 !important;
+}
+.font-black {
+  font-weight: 900 !important;
+}
+.font-semibold {
+  font-weight: 600 !important;
+}
+.font-medium {
+  font-weight: 500 !important;
+}
+
+p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+}
+
+/* Ensure standard paragraphs inside light mode main content default to high-contrast black, except intentional white text */
+.light-theme main p:not(.text-white):not([style*="color: #ffffff"]):not([style*="color: white"]):not(.card-overlay-text *) {
+  color: #000000;
+}
+
+/* Card overlay text on image cards is strictly white across all themes */
+.card-overlay-text,
+.card-overlay-text h3,
+.card-overlay-text p {
+  color: #ffffff !important;
+}
+
+.light-theme main h1:not(.text-white):not([class*="bg-clip-text"]),
+.light-theme main h2:not(.text-white):not([class*="bg-clip-text"]),
+.light-theme main h3:not(.text-white):not([class*="bg-clip-text"]),
+.light-theme main h4:not(.text-white):not([class*="bg-clip-text"]),
+.light-theme main strong:not(.text-white):not([style*="color: #ffffff"]),
+.light-theme main label:not(.text-white),
+.light-theme main span.text-gray-600,
+.light-theme main span.text-gray-700,
+.light-theme main span.text-slate-700,
+.light-theme main span.text-zinc-700 {
+  color: #000000;
+}
+
+/* Force light gray, slate, or neutral paragraph text to be high-contrast black in light mode */
+.light-theme main p.text-gray-400,
+.light-theme main p.text-gray-500,
+.light-theme main p.text-gray-600,
+.light-theme main p.text-gray-700,
+.light-theme main p.text-slate-500,
+.light-theme main p.text-slate-600,
+.light-theme main p.text-neutral-500,
+.light-theme main p.text-neutral-600,
+.light-theme main p.text-zinc-500,
+.light-theme main p.text-zinc-600 {
+  color: #000000 !important;
+}
+
+:where(.dark-theme) p {
+  color: #f3f4f6;
+}
+

@@ -1,0 +1,6 @@
+{
+  "name": "LuminaLeaf",
+  "description": "Premium industrial solar Engineering, Procurement, and Construction (EPC) partner platform, including interactive cost calculators, media galleries, active blog, and founder details.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
