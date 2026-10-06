@@ -112,7 +112,7 @@ export default function AboutView({ darkMode }: AboutViewProps) {
                       <span>Co-Founder & Managing Director</span>
                     </div>
                     <h3 className="text-xl sm:text-2xl font-black !text-white" style={{ color: '#ffffff' }}>Surajit Bera</h3>
-                    <p className="text-xs !text-white font-medium" style={{ color: '#ffffff' }}>Civil Engineer</p>
+                    <p className="text-xs !text-white font-medium" style={{ color: '#ffffff' }}>Operational Oversight</p>
                   </div>
                 </div>
               </div>

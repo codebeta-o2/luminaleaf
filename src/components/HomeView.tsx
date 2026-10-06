@@ -86,7 +86,7 @@ export default function HomeView({ setView, darkMode }: HomeViewProps) {
       {/* 1. Immersive Vide/Banner Hero Section */}
       <section 
         id="hero-section" 
-        className="relative w-full aspect-video flex items-center justify-center overflow-hidden border-b border-cyan-400/40 shadow-[0_10px_35px_rgba(6,182,212,0.35)]"
+        className="relative w-full aspect-video lg:aspect-auto lg:h-[calc(100vh-5.0625rem)] flex items-center justify-center overflow-hidden border-b border-cyan-400/40 shadow-[0_10px_35px_rgba(6,182,212,0.35)]"
       >
         {/* Glowing layer */}
         <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/20 via-black/40 to-black/80" />
@@ -411,8 +411,46 @@ export default function HomeView({ setView, darkMode }: HomeViewProps) {
 
           {/* Responsive Layout for A process designed to reduce risk */}
           
-          {/* 1. MOBILE & TABLET LAYOUT: Vertical column-wise representation (shown on small screens) */}
-          <div ref={containerRef} className="block md:hidden w-full overflow-hidden pb-4" style={{ height: `${1560 * scale}px` }}>
+          {/* 1. MOBILE & TABLET LAYOUT: Readable vertical process steps */}
+          <div className="grid gap-3 md:hidden">
+            <div className="mx-auto mb-1 inline-flex items-center gap-2 rounded-full border border-[#fb2c36]/30 bg-black/40 px-4 py-2 text-sm font-bold tracking-widest text-[#ff777d]">
+              <span className="h-2.5 w-2.5 rounded-sm bg-[#fb2c36]" />
+              START
+            </div>
+            {[
+              { number: '01', title: 'Site survey & Load assessment', color: '#fb2c36', icon: <User className="h-6 w-6" /> },
+              { number: '02', title: 'Engineering checks & feasibility outcomes', color: '#fe6e00', icon: <Search className="h-6 w-6" /> },
+              { number: '03', title: 'Transparent commercial proposals', color: '#ffd236', icon: <BarChart3 className="h-6 w-6" /> },
+              { number: '04', title: 'Procurement coordination & controlled execution', color: '#84cc16', icon: <Zap className="h-6 w-6" /> },
+              { number: '05', title: 'Scheduled commissioning & handover training', color: '#10b981', icon: <Send className="h-6 w-6" /> },
+              { number: '06', title: 'Preventive maintenance & performance assurance', color: '#00c758', icon: <Activity className="h-6 w-6" /> },
+            ].map((step) => (
+              <div
+                key={step.number}
+                className="flex min-h-20 items-center gap-4 border border-white/15 bg-black/70 p-4 shadow-lg backdrop-blur-sm"
+                style={{ borderLeft: `4px solid ${step.color}` }}
+              >
+                <span className="w-12 shrink-0 font-mono text-3xl font-black leading-none text-white">
+                  {step.number}
+                </span>
+                <div
+                  className="flex h-11 w-11 shrink-0 items-center justify-center"
+                  style={{ color: step.color, backgroundColor: `${step.color}22` }}
+                >
+                  {step.icon}
+                </div>
+                <h3 className="text-left font-sans text-base font-bold leading-snug text-white">
+                  {step.title}
+                </h3>
+              </div>
+            ))}
+            <div className="mx-auto mt-1 inline-flex items-center gap-2 rounded-full border border-[#00c758]/30 bg-black/40 px-4 py-2 text-sm font-bold tracking-widest text-[#59ef9d]">
+              FINISH
+              <span className="h-2.5 w-2.5 rounded-sm bg-[#00c758]" />
+            </div>
+          </div>
+
+          <div ref={containerRef} className="hidden w-full overflow-hidden pb-4" style={{ height: `${1560 * scale}px` }}>
             <div 
               className="relative origin-top-left select-none mx-auto"
               style={{ 
@@ -432,7 +470,7 @@ export default function HomeView({ setView, darkMode }: HomeViewProps) {
               <div className="absolute left-[300px] top-[54px] w-0.5 h-[76px] bg-[#fb2c36] -translate-x-1/2 opacity-70 z-20" />
 
               {/* Beautiful, seamless vector gradient snake pipeline path for 6 steps (Vertical) */}
-              <svg className="absolute inset-0 w-full h-full pointer-events-none z-10" viewBox="0 0 600 1560" xmlns="http://www.w3.org/2000/svg">
+              <svg className="hidden absolute inset-0 w-full h-full pointer-events-none z-10" viewBox="0 0 600 1560" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <linearGradient id="pipeline-gradient-6-vertical" x1="0%" y1="0%" x2="0%" y2="100%">
                     <stop offset="0%" stopColor="#fb2c36" />
@@ -531,8 +569,8 @@ export default function HomeView({ setView, darkMode }: HomeViewProps) {
               <div 
                 className="absolute left-[212.5px] top-[130px] w-[175px] h-[170px] rounded-none border border-gray-200/50 flex flex-col items-center justify-center p-4 bg-white shadow-2xl shadow-black/30 hover:scale-105 transition duration-300 z-30 text-slate-900"
               >
-                <span className="text-[12px] font-mono font-bold text-gray-400">01</span>
-                <span className="text-[10px] font-mono tracking-widest font-black text-gray-400 uppercase mb-3">STEP</span>
+                <span className="text-[36px] font-mono font-black leading-none text-slate-700">01</span>
+                <span className="text-[20px] font-mono tracking-widest font-black text-slate-600 uppercase mb-3">STEP</span>
                 <div className="p-4.5 bg-[#fb2c36]/10 text-[#fb2c36] rounded-none shadow-inner border border-[#fb2c36]/20">
                   <User className="w-8 h-8" strokeWidth={2.5} />
                 </div>
@@ -542,8 +580,8 @@ export default function HomeView({ setView, darkMode }: HomeViewProps) {
               <div 
                 className="absolute left-[212.5px] top-[355px] w-[175px] h-[170px] rounded-none border border-gray-200/50 flex flex-col items-center justify-center p-4 bg-white shadow-2xl shadow-black/30 hover:scale-105 transition duration-300 z-30 text-slate-900"
               >
-                <span className="text-[12px] font-mono font-bold text-gray-400">02</span>
-                <span className="text-[10px] font-mono tracking-widest font-black text-gray-400 uppercase mb-3">STEP</span>
+                <span className="text-[36px] font-mono font-black leading-none text-slate-700">02</span>
+                <span className="text-[20px] font-mono tracking-widest font-black text-slate-600 uppercase mb-3">STEP</span>
                 <div className="p-4.5 bg-[#fe6e00]/10 text-[#fe6e00] rounded-none shadow-inner border border-[#fe6e00]/20">
                   <Search className="w-8 h-8" strokeWidth={2.5} />
                 </div>
@@ -553,8 +591,8 @@ export default function HomeView({ setView, darkMode }: HomeViewProps) {
               <div 
                 className="absolute left-[212.5px] top-[580px] w-[175px] h-[170px] rounded-none border border-gray-200/50 flex flex-col items-center justify-center p-4 bg-white shadow-2xl shadow-black/30 hover:scale-105 transition duration-300 z-30 text-slate-900"
               >
-                <span className="text-[12px] font-mono font-bold text-gray-400">03</span>
-                <span className="text-[10px] font-mono tracking-widest font-black text-gray-400 uppercase mb-3">STEP</span>
+                <span className="text-[36px] font-mono font-black leading-none text-slate-700">03</span>
+                <span className="text-[20px] font-mono tracking-widest font-black text-slate-600 uppercase mb-3">STEP</span>
                 <div className="p-4.5 bg-[#ffd236]/10 text-amber-500 rounded-none shadow-inner border border-amber-500/20">
                   <BarChart3 className="w-8 h-8" strokeWidth={2.5} />
                 </div>
@@ -564,8 +602,8 @@ export default function HomeView({ setView, darkMode }: HomeViewProps) {
               <div 
                 className="absolute left-[212.5px] top-[805px] w-[175px] h-[170px] rounded-none border border-gray-200/50 flex flex-col items-center justify-center p-4 bg-white shadow-2xl shadow-black/30 hover:scale-105 transition duration-300 z-30 text-slate-900"
               >
-                <span className="text-[12px] font-mono font-bold text-gray-400">04</span>
-                <span className="text-[10px] font-mono tracking-widest font-black text-gray-400 uppercase mb-3">STEP</span>
+                <span className="text-[36px] font-mono font-black leading-none text-slate-700">04</span>
+                <span className="text-[20px] font-mono tracking-widest font-black text-slate-600 uppercase mb-3">STEP</span>
                 <div className="p-4.5 bg-[#84cc16]/10 text-[#84cc16] rounded-none shadow-inner border border-[#84cc16]/20">
                   <Zap className="w-8 h-8" strokeWidth={2.5} />
                 </div>
@@ -575,8 +613,8 @@ export default function HomeView({ setView, darkMode }: HomeViewProps) {
               <div 
                 className="absolute left-[212.5px] top-[1030px] w-[175px] h-[170px] rounded-none border border-gray-200/50 flex flex-col items-center justify-center p-4 bg-white shadow-2xl shadow-black/30 hover:scale-105 transition duration-300 z-30 text-slate-900"
               >
-                <span className="text-[12px] font-mono font-bold text-gray-400">05</span>
-                <span className="text-[10px] font-mono tracking-widest font-black text-gray-400 uppercase mb-3">STEP</span>
+                <span className="text-[36px] font-mono font-black leading-none text-slate-700">05</span>
+                <span className="text-[20px] font-mono tracking-widest font-black text-slate-600 uppercase mb-3">STEP</span>
                 <div className="p-4.5 bg-[#10b981]/10 text-[#10b981] rounded-none shadow-inner border border-[#10b981]/20">
                   <Send className="w-8 h-8" strokeWidth={2.5} />
                 </div>
@@ -586,8 +624,8 @@ export default function HomeView({ setView, darkMode }: HomeViewProps) {
               <div 
                 className="absolute left-[212.5px] top-[1255px] w-[175px] h-[170px] rounded-none border border-gray-200/50 flex flex-col items-center justify-center p-4 bg-white shadow-2xl shadow-black/30 hover:scale-105 transition duration-300 z-30 text-slate-900"
               >
-                <span className="text-[12px] font-mono font-bold text-gray-400">06</span>
-                <span className="text-[10px] font-mono tracking-widest font-black text-gray-400 uppercase mb-3">STEP</span>
+                <span className="text-[36px] font-mono font-black leading-none text-slate-700">06</span>
+                <span className="text-[20px] font-mono tracking-widest font-black text-slate-600 uppercase mb-3">STEP</span>
                 <div className="p-4.5 bg-[#00c758]/10 text-[#00c758] rounded-none shadow-inner border border-[#00c758]/20">
                   <Activity className="w-8 h-8" strokeWidth={2.5} />
                 </div>

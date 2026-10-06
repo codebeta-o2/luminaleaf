@@ -130,7 +130,7 @@ export default function ServicesView({ darkMode }: ServicesViewProps) {
           {services.map((service, index) => (
             <div
               key={service.id}
-              className={`flex items-stretch rounded-none p-2 pr-4 border transition-all duration-300 relative shadow-sm h-full ${
+              className={`flex flex-col lg:flex-row items-stretch rounded-none p-2 lg:pr-4 border transition-all duration-300 relative shadow-sm h-full ${
                 darkMode 
                   ? 'bg-[#181a1c]/90 border-zinc-800/80 hover:border-emerald-500/30' 
                   : 'bg-white border-emerald-100 hover:border-emerald-500/20'
@@ -139,18 +139,21 @@ export default function ServicesView({ darkMode }: ServicesViewProps) {
               
               {/* 1. Colored Title Block (With Title integrated) */}
               <div 
-                className={`flex flex-col items-center justify-center text-center text-white p-4 rounded-none min-w-[135px] sm:min-w-[160px] shrink-0 relative bg-gradient-to-b ${service.colorClass} shadow-none`}
+                className={`flex flex-col items-center justify-center text-center text-white px-14 py-3 lg:p-4 rounded-none w-full lg:w-auto min-w-0 lg:min-w-[160px] min-h-[64px] lg:min-h-0 shrink-0 relative bg-gradient-to-b ${service.colorClass} shadow-none`}
               >
-                <h3 className="text-sm sm:text-base font-black tracking-tight leading-tight text-white uppercase font-mono">
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 lg:hidden rounded-none border border-white/40 bg-black/15 px-2 py-1 text-lg font-black leading-none text-white">
+                  {service.step}
+                </span>
+                <h3 className="text-base lg:text-sm font-bold lg:font-black tracking-normal lg:tracking-tight leading-snug lg:leading-tight text-left lg:text-center text-white normal-case lg:uppercase font-[Arial,sans-serif] lg:font-mono">
                   {service.title}
                 </h3>
                 
                 {/* Overlapping triangular pointer pointing right */}
-                <div className={`absolute right-[-10px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent border-l-[10px] ${service.triangleColor} z-20`} />
+                <div className={`hidden lg:block absolute right-[-10px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent border-l-[10px] ${service.triangleColor} z-20`} />
               </div>
 
               {/* 2. Middle Content Area (creamy/tinted inner capsule) - completely sharp */}
-              <div className={`flex-1 ml-4 mr-3 p-4 rounded-none transition-colors duration-300 ${service.accentBg} flex flex-col justify-center`}>
+              <div className={`flex-1 mt-2 lg:mt-0 ml-0 mr-0 lg:ml-4 lg:mr-3 p-4 rounded-none transition-colors duration-300 ${service.accentBg} flex flex-col justify-center`}>
                 <div className="mb-2">
                   <p className={`text-xs sm:text-sm tracking-wide font-extrabold font-mono uppercase ${service.accentText}`}>
                     {service.subtitle}
@@ -191,7 +194,7 @@ export default function ServicesView({ darkMode }: ServicesViewProps) {
               </div>
 
               {/* 3. Action Icon (Far Right) - completely sharp */}
-              <div className="flex items-center justify-center p-3 rounded-none bg-slate-100 dark:bg-zinc-800 border border-slate-200/50 dark:border-zinc-750 shadow-none shrink-0 self-center mr-2">
+              <div className="hidden lg:flex lg:static items-center justify-center p-3 rounded-none bg-slate-100 dark:bg-zinc-800 border border-slate-200/50 dark:border-zinc-750 shadow-none shrink-0 self-center lg:mr-2">
                 {service.icon}
               </div>
 
