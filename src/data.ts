@@ -33,7 +33,7 @@ export const executives: Founder[] = [
     description: "A Structural Engineer by profession, Soumen Mondal co-founded LuminaLeaf Energy with a vision to make clean energy accessible through reliable engineering and seamless project execution.\n\nHe oversees engineering design, operations, and technical project delivery, ensuring every rooftop and ground-mounted installation meets the highest structural standards, wind-load resistance safety, and long-term durability.",
     imageUrl: soumenMondalImg,
     linkedinUrl: "https://www.linkedin.com/in/soumen-mondal-501682183?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-    emailContact: "soumen@luminaleaf.com"
+    emailContact: "soumen.mondal@luminaleaf.com"
   },
   {
     name: "Ranajit Kumar Bera",

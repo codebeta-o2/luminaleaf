@@ -160,6 +160,11 @@ export default function HomeView({ setView, darkMode }: HomeViewProps) {
                   >
                     We are specialized solar professionals delivering site survey, system design, liaisoning, commissioning, and SCADA monitoring for large EPCs.
                   </p>
+                  <p 
+                    className={`text-base sm:text-lg md:text-xl max-w-3xl leading-relaxed ${darkMode ? 'text-gray-200' : 'text-black'}`}
+                  >
+                    Luminaleaf acts as the vital execution partner for tier-1 EPC players and commercial business developers. With specialized safety compliance, rapid turnaround speeds, and absolute technical competence, we carry your solar layouts from paper blueprints into live power injection.
+                  </p>
                 </div>
 
                 <div className="pt-4 border-t border-gray-200/80 dark:border-zinc-800/80 space-y-2">
@@ -405,7 +410,7 @@ export default function HomeView({ setView, darkMode }: HomeViewProps) {
               A process designed to reduce risk.
             </h2>
             <p className="text-xs sm:text-sm max-w-2xl mx-auto" style={{ color: '#ffffff' }}>
-              Interactive 6-step execution map. Responsive scaling automatically fits the complete layout perfectly on your screen without horizontal scrolling.
+              From site survey to commissioning, our six-step process minimizes risk, ensures quality, controls costs, and delivers reliable solar performance.
             </p>
           </div>
 
